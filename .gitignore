@@ -1,0 +1,67 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+## User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.swp
+
+## VS Code
+.vscode/
+.history/
+
+## Rider
+.idea/
+*.sln.iml
+
+## ASP.NET temporary files
+*~/
+*.tmp
+*.bak
+*.backup
+*.cache
+*.config
+
+## DotCover
+*.dotCover
+
+## Azure Functions
+local.settings.json
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Mac system files
+.DS_Store
+
+# Logs
+*.log
+
+# dotenv
+.env
+.env.*
