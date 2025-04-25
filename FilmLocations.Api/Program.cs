@@ -20,14 +20,13 @@ builder.Services.AddControllers()
     {
         options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
     });
-builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddMemoryCache();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWebClient",
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200", "https://salmon-water-016004810.6.azurestaticapps.net/")
+            policy.WithOrigins("http://localhost:4200", "https://salmon-water-016004810.6.azurestaticapps.net")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
@@ -49,11 +48,11 @@ var app = builder.Build();
 // Seed the database at startup
 DatabaseSeeder.SeedDatabase("Data/Film_Locations_in_San_Francisco.csv", connection);
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// if (app.Environment.IsDevelopment())
+// {
+app.UseSwagger();
+app.UseSwaggerUI();
+// }
 
 app.UseCors("AllowWebClient");
 app.MapControllers();

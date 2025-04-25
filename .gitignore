@@ -3,6 +3,7 @@
 [Oo]bj/
 [Ll]og/
 *.log
+publish/
 
 ## User-specific files
 *.user
