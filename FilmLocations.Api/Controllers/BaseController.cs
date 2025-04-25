@@ -1,7 +1,7 @@
-using Films.Api.Models;
+using FilmLocations.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Films.Api.Controllers;
+namespace FilmLocations.Api.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 public abstract class BaseController : ControllerBase
@@ -33,6 +33,6 @@ public abstract class BaseController : ControllerBase
     protected IActionResult HandleException(Exception ex)
     {
         _logger.LogError(ex, "An unexpected error occurred");
-        return StatusCode(500, new ErrorResponse { Message  = "An unexpected error occurred." });
+        return StatusCode(500, new ErrorResponse { Message = "An unexpected error occurred." });
     }
 }

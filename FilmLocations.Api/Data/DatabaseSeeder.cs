@@ -1,10 +1,10 @@
 using System.Globalization;
 using CsvHelper;
 using Microsoft.Data.Sqlite;
-using Films.Api.Models;
+using FilmLocations.Api.Models;
 using CsvHelper.Configuration;
 
-namespace Films.Api.Data;
+namespace FilmLocations.Api.Data;
 public static class DatabaseSeeder
 {
     public static void SeedDatabase(string csvFilePath, SqliteConnection connection)

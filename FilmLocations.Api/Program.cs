@@ -1,33 +1,33 @@
 using System.Data;
-using Films.Api.Data;
-using Films.Api.Managers.Contracts;
-using Films.Api.Managers.Implementations;
-using Films.Api.Repositories.Contracts;
-using Films.Api.Repositories.Implementations;
+using FilmLocations.Api.Data;
+using FilmLocations.Api.Managers.Contracts;
+using FilmLocations.Api.Managers.Implementations;
+using FilmLocations.Api.Repositories.Contracts;
+using FilmLocations.Api.Repositories.Implementations;
 using Microsoft.Data.Sqlite;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options => options.SwaggerDoc("v1", new() 
-    { 
-        Title = "Films API",
-        Version = "v1" 
-    }));
+builder.Services.AddSwaggerGen(options => options.SwaggerDoc("v1", new()
+{
+    Title = "Films API",
+    Version = "v1"
+}));
 builder.Services.AddOpenApi();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
     });
-builder.Services.AddAutoMapper(typeof(Program)); 
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddMemoryCache();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWebClient",
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200")
+            policy.WithOrigins("http://localhost:4200", "https://salmon-water-016004810.6.azurestaticapps.net")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
