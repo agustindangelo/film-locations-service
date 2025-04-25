@@ -27,7 +27,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowWebClient",
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200", "https://salmon-water-016004810.6.azurestaticapps.net")
+            policy.WithOrigins("http://localhost:4200", "https://salmon-water-016004810.6.azurestaticapps.net/")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
