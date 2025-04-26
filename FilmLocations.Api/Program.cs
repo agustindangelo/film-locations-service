@@ -48,11 +48,11 @@ var app = builder.Build();
 // Seed the database at startup
 DatabaseSeeder.SeedDatabase("Data/Film_Locations_in_San_Francisco.csv", connection);
 
-// if (app.Environment.IsDevelopment())
-// {
-app.UseSwagger();
-app.UseSwaggerUI();
-// }
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseCors("AllowWebClient");
 app.MapControllers();
