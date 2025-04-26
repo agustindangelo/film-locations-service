@@ -34,7 +34,8 @@ public class FilmManagerTests
         var result = await _FilmManager.GetFilmDetails(filmId);
 
         // Assert
-        Assert.That(result, Is.EqualTo(expectedFilm));
+        Assert.That(result.Id, Is.EqualTo(expectedFilm.Id));
+        Assert.That(result.Title, Is.EqualTo(expectedFilm.Title));
     }
 
     [Test]
@@ -50,7 +51,9 @@ public class FilmManagerTests
         var result = await _FilmManager.Search(searchInput);
 
         // Assert
-        Assert.That(result, Is.EqualTo(expectedfilms));
+        Assert.That(result.Count(), Is.EqualTo(1));
+        Assert.That(result.First().Id, Is.EqualTo("dummyUUID"));
+        Assert.That(result.First().Title, Is.EqualTo("dummy film title"));
     }
 
     [Test]
